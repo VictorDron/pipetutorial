@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guia completo para criar negociações no Pipedrive">
+    <title>Guia Pipedrive - Manual Passo a Passo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header com Stepper -->
+    <header class="header" role="banner">
+        <div class="header__container">
+            <div class="header__logo">
+                <h1>📊 Guia Pipedrive</h1>
+            </div>
+            <div class="stepper" role="navigation" aria-label="Progresso do tutorial">
+                <div class="stepper__progress">
+                    <div class="stepper__progress-bar" id="progressBar"></div>
+                </div>
+                <div class="stepper__bullets" id="stepperBullets"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main" role="main">
+        <div class="container">
+            <!-- Sidebar com Sumário -->
+            <aside class="sidebar" role="complementary" aria-label="Sumário do guia">
+                <div class="sidebar__content">
+                    <h2 class="sidebar__title">📑 Sumário</h2>
+                    <nav class="sidebar__nav" id="tableOfContents"></nav>
+                    
+                    <div class="sidebar__controls">
+                        <button 
+                            class="btn btn--secondary" 
+                            id="toggleAnnotations"
+                            aria-pressed="true">
+                            👁️ Mostrar Anotações
+                        </button>
+                        <button 
+                            class="btn btn--secondary" 
+                            id="resetZoom"
+                            aria-label="Redefinir zoom da imagem">
+                            🔍 Resetar Zoom
+                        </button>
+                    </div>
+
+                    <div class="sidebar__help">
+                        <h3>⌨️ Atalhos</h3>
+                        <ul>
+                            <li><kbd>←</kbd> Etapa anterior</li>
+                            <li><kbd>→</kbd> Próxima etapa</li>
+                            <li><kbd>Z</kbd> Toggle zoom</li>
+                            <li><kbd>A</kbd> Toggle anotações</li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Step Content -->
+            <div class="step-container" id="stepContainer">
+                <div class="step" id="currentStep">
+                    <!-- Step Header -->
+                    <div class="step__header">
+                        <span class="step__number" id="stepNumber"></span>
+                        <h2 class="step__title" id="stepTitle"></h2>
+                    </div>
+
+                    <!-- Step Content Grid -->
+                    <div class="step__content">
+                        <!-- Image Column -->
+                        <div class="step__image-wrapper">
+                            <div class="step__image-container" id="imageContainer">
+                                <img 
+                                    class="step__image" 
+                                    id="stepImage" 
+                                    src="" 
+                                    alt=""
+                                    draggable="false">
+                                <div class="hotspots" id="hotspotsContainer"></div>
+                                <div class="step__zoom-indicator" id="zoomIndicator">100%</div>
+                            </div>
+                        </div>
+
+                        <!-- Instructions Column -->
+                        <div class="step__instructions">
+                            <div class="step__objective" id="stepObjective"></div>
+                            
+                            <div class="step__actions" id="stepActions"></div>
+                            
+                            <div class="callouts" id="calloutsContainer"></div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation -->
+                    <div class="step__navigation">
+                        <button 
+                            class="btn btn--primary" 
+                            id="prevBtn"
+                            aria-label="Etapa anterior">
+                            ← Anterior
+                        </button>
+                        <span class="step__counter" id="stepCounter"></span>
+                        <button 
+                            class="btn btn--primary" 
+                            id="nextBtn"
+                            aria-label="Próxima etapa">
+                            Próximo →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer__container">
+            <p>Use as setas ← → do teclado para navegar | <a href="#top" class="footer__link">Voltar ao topo ↑</a></p>
+            <p class="footer__copyright">Guia Pipedrive © 2025 - Tutorial Interativo</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
